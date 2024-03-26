@@ -14,14 +14,7 @@ namespace LegacyApp
             if (!ageValidation(dateOfBirth)) return false;
             
 
-            var user = new User
-            {
-                Client = client,
-                DateOfBirth = dateOfBirth,
-                EmailAddress = email,
-                FirstName = firstName,
-                LastName = lastName
-            };
+            var client = ClientCreatrion(firstName, lastName, email, dateOfBirth, clientId, out var user);
 
             if (client.Type == "VeryImportantClient")
             {
