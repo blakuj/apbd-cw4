@@ -11,13 +11,8 @@ namespace LegacyApp
 
             if (!emailValidation(email)) return false;
 
-            if (age < 21)
-            {
-                return false;
-            }
-
-            var clientRepository = new ClientRepository();
-            var client = clientRepository.GetById(clientId);
+            if (!ageValidation(dateOfBirth)) return false;
+            
 
             var user = new User
             {
