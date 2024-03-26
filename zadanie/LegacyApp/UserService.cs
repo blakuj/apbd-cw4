@@ -25,7 +25,17 @@ namespace LegacyApp
             
         }
 
-       
+        
+
+        private bool emailValidation(String email)
+        {
+            if (!email.Contains("@") && !email.Contains("."))
+            {
+                return false;
+            }
+
+            return true;
+        }
 
         private bool ageValidation(DateTime dateOfBirth)
         {
