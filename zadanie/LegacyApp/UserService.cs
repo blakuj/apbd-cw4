@@ -25,7 +25,22 @@ namespace LegacyApp
             
         }
 
-        
+        private Client ClientCreatrion(string firstName, string lastName, string email, DateTime dateOfBirth, int clientId,
+            out User user)
+        {
+            var clientRepository = new ClientRepository();
+            var client = clientRepository.GetById(clientId);
+
+            user = new User
+            {
+                Client = client,
+                DateOfBirth = dateOfBirth,
+                EmailAddress = email,
+                FirstName = firstName,
+                LastName = lastName
+            };
+            return client;
+        }
 
         private bool DoesUserHasCreditLimit(User user)
         {
