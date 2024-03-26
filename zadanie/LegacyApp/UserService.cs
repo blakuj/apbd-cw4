@@ -27,6 +27,15 @@ namespace LegacyApp
 
         
 
+        private bool doesNameExist(string firstName, string lastName)
+        {
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName))
+            {
+                return false;
+            }
+            return true;
+        }
+
         private bool emailValidation(String email)
         {
             if (!email.Contains("@") && !email.Contains("."))
