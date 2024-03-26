@@ -9,9 +9,7 @@ namespace LegacyApp
 
             if (!doesNameExist(firstName, lastName)) return false;
 
-            var now = DateTime.Now;
-            int age = now.Year - dateOfBirth.Year;
-            if (now.Month < dateOfBirth.Month || (now.Month == dateOfBirth.Month && now.Day < dateOfBirth.Day)) age--;
+            if (!emailValidation(email)) return false;
 
             if (age < 21)
             {
