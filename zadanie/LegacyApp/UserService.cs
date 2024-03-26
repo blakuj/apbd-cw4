@@ -18,13 +18,11 @@ namespace LegacyApp
 
             ClientImportanceAndCreditLimitSet(client, user);
 
-            if (user.HasCreditLimit && user.CreditLimit < 500)
-            {
-                return false;
-            }
+            if (!DoesUserHasCreditLimit(user)) return false;
 
             UserDataAccess.AddUser(user);
             return true;
+            
         }
     }
 }
